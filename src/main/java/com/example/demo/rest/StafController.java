@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -74,9 +75,9 @@ public class StafController {
 			@ApiResponse(description = "Success", responseCode = "200"),
 			@ApiResponse(description = "UnAuthorized / Invalid Token", responseCode = "403") })
 
-	 @PostMapping("/delete")
+	 @DeleteMapping("/delete")
     public ResponseEntity<String> Delete( Integer id) {
          String deleteById = service.deleteById(id);
-		return ResponseEntity.ok("Staf saved with ID: ");
+		return ResponseEntity.ok("Deleted ID: ");
 	}
 }

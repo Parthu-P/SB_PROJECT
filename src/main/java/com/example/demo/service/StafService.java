@@ -45,7 +45,7 @@ public class StafService {
 	public String deleteById(Integer id) {
 		repo.findById(id).orElseThrow(()->{
 			logger.info("");
-			return new EntityNotFoundException("   ");
+			return new EntityNotFoundException("nnnnnnnnnnnnnnnnn");
 		});
 		repo.deleteById(id);
 		return "Deleted";

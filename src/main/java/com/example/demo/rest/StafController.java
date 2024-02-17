@@ -68,4 +68,15 @@ public class StafController {
         StafEntity savedStaf = service.updateId(id, stafEntity);
 		return ResponseEntity.ok("Staf saved with ID: " + savedStaf.getStafId());
 	}
+	
+	
+	@Operation(description = "Get end points for Staf", summary = "This end point used to create staf", responses = {
+			@ApiResponse(description = "Success", responseCode = "200"),
+			@ApiResponse(description = "UnAuthorized / Invalid Token", responseCode = "403") })
+
+	 @PostMapping("/delete")
+    public ResponseEntity<String> Delete( Integer id) {
+         String deleteById = service.deleteById(id);
+		return ResponseEntity.ok("Staf saved with ID: ");
+	}
 }

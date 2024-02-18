@@ -27,14 +27,14 @@ public class StafService {
 		if(findById.isEmpty()) {
 			return repo.save(entity);
 		}else {
-			throw new EntityNotFoundException("this id is already exsits");
+			throw new EntityNotFoundException("This id is already exists");
 		}
 	}
 
 	public List<StafEntity> fetch() {
 		List<StafEntity> list = repo.findAll();
 		if(list.isEmpty()) {
-			throw new EntityNotFoundException("data is not found");
+			throw new EntityNotFoundException("Data is not found");
 		}else {
 			return list;
 		}
@@ -50,7 +50,7 @@ public class StafService {
 	public String deleteById(Integer id) {
 		repo.findById(id).orElseThrow(() -> {
 			logger.info("");
-			throw new EntityNotFoundException("nnnnnnnnnnnnnnnnn");
+			throw new EntityNotFoundException("Id is not found");
 		});
 		repo.deleteById(id);
 		return "Deleted";
@@ -58,7 +58,7 @@ public class StafService {
 
 	public StafEntity updateId(Integer id, StafEntity entity) {
 		repo.findById(id).orElseThrow(() -> {
-			throw new EntityNotFoundException("nnnnnnnnnnnnn");
+			throw new EntityNotFoundException("Id is not found");
 		});
 		return repo.save(entity);
 

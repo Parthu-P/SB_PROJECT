@@ -27,7 +27,7 @@ public class StafService {
 		if(findById.isEmpty()) {
 			return repo.save(entity);
 		}else {
-			throw new EntityNotFoundException("This id is already exists");
+			throw new EntityNotFoundException("This id"+findById+" is already exists");
 		}
 	}
 
